@@ -98,14 +98,14 @@ console.log("Filtered By More Balance than a:", filteredByBalance)
 // bodlogo 5 !!!!!!
 // classCode gesen field nemeh function bich
 // eg: addClassCodeToStudents(students, "3A") => {name: "boldo", age: 3, grade: 11, gender: "male", classCode: "3A"},
-function addClassCodeToStudents(students, a) {
-    students.map((student)=>{
-        data.push("classCode")
-        return student
-    })
+function addClassCodeToStudents(students, a) { 
+    // let classCode = []
+    // let count= 0
+    data.classCode = "3A"
 }
-let addedClassCode =  addClassCodeToStudents(data)
-console.log("Added Class Code:", addedClassCode)
+console.log(data.classCode)
+// let addedClassCode =  addClassCodeToStudents(data, "3A")
+// console.log("Added Class Code:", addedClassCode)
 
 
 // bodlogo 6
