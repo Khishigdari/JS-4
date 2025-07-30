@@ -11,16 +11,16 @@ let data = [
 ];
 
 //Ascending
-data.sort((student2, student1)=>{
-    return student2.balance - student1.balance
-})
-console.log("Sorted Ascending Balance:", data)
+data.sort((student2, student1) => {
+  return student2.balance - student1.balance;
+});
+console.log("Sorted Ascending Balance:", data);
 
 //Descending
-data.sort((student2, student1)=>{
-    return student1.balance - student2.balance
-})
-console.log("Sorted Descending Balance:", data)
+data.sort((student2, student1) => {
+  return student1.balance - student2.balance;
+});
+console.log("Sorted Descending Balance:", data);
 
 // bodlogo 1
 // nasand hursen suragchiig filterlej oloh function bich
@@ -37,7 +37,6 @@ console.log("Sorted Descending Balance:", data)
 // bodlogo 6
 // removeGenders from student array function bich
 
-
 // bodlogo 1
 // nasand hursen suragchiig filterlej oloh function bich
 // const adultFilteredStudents = students.filter((student)=>{
@@ -48,65 +47,78 @@ console.log("Sorted Descending Balance:", data)
 // console.log("Filtered Adult Students:", adultFilteredStudents)
 
 function findAdultStudents(students) {
-    let filtered = students.filter((student)=>{
-        return student.age > 18
-    })
-    return filtered
+  let filtered = students.filter((student) => {
+    return student.age > 18;
+  });
+  return filtered;
 }
-let result= findAdultStudents(data)
-console.log("Filtered Adult Students:", result)
-
+let result = findAdultStudents(data);
+console.log("Filtered Adult Students:", result);
 
 // bodlogo 2
 // gender ugunguut tuhain gendereer filterlej uguh function bich
 function findByGender(students, gender) {
-    let filtered = students.filter((student)=>{
-        return student.gender ===gender
-    }) 
-    return filtered
+  let filtered = students.filter((student) => {
+    return student.gender === gender;
+  });
+  return filtered;
 }
-let filterByGender = findByGender(data, "female")
-console.log("Filtered By Gender:", filterByGender)
-
+let filterByGender = findByGender(data, "female");
+console.log("Filtered By Gender:", filterByGender);
 
 // bodlogo 3
 // nasaar ni sortloh function bich
 function findByAge(students) {
-    let filtered = students.sort((student2, student1)=>{
-        return student2.age - student1.age
-    })
-    return filtered
+  let filtered = students.sort((student2, student1) => {
+    return student2.age - student1.age;
+  });
+  return filtered;
 }
-let sortByAge = findByAge(data)
-console.log("Sort By Age (Ascending):", sortByAge)
-
+let sortByAge = findByAge(data);
+console.log("Sort By Age (Ascending):", sortByAge);
 
 // bodlogo 4
 // neg too ugunguut tuhain toonoos ih balancetai suragchdiig ylgaj uguh function bich
 function findByBalance(students, a) {
-    let filtered = students.filter((student)=>{
-        return student.balance>a
-    })
-    return filtered
+  let filtered = students.filter((student) => {
+    return student.balance > a;
+  });
+  return filtered;
 }
-let filteredByBalance = findByBalance(data, 1000)
-console.log("Filtered By More Balance than a:", filteredByBalance)
-
-
-
+let filteredByBalance = findByBalance(data, 1000);
+console.log("Filtered By More Balance than a:", filteredByBalance);
 
 // bodlogo 5 !!!!!!
 // classCode gesen field nemeh function bich
 // eg: addClassCodeToStudents(students, "3A") => {name: "boldo", age: 3, grade: 11, gender: "male", classCode: "3A"},
-function addClassCodeToStudents(students, a) { 
-    // let classCode = []
-    // let count= 0
-    data.classCode = "3A"
+// function addClassCodeToStudents(students, a) {
+//     let filtered = students.map(obj => ({ ...obj, classCode: "3A" }))
+//     return filtered
+// }
+// let classCodeAdded = addClassCodeToStudents(data, "3A")
+// console.log("Added Class Code:", classCodeAdded)
+function addClassCodeToStudents(students) {
+  students.map((student) => {
+    student.classCode = "3A";
+  });
+  return students;
 }
-console.log(data.classCode)
-// let addedClassCode =  addClassCodeToStudents(data, "3A")
-// console.log("Added Class Code:", addedClassCode)
-
+let classCodeAdded = addClassCodeToStudents(data);
+console.log("Added Class Code:", classCodeAdded);
 
 // bodlogo 6
 // removeGenders from student array function bich
+
+function removeGenders(students) {
+  let filtered = students.map((student) => {
+    return {
+      name: student.name,
+      age: student.age,
+      grade: student.grade,
+      balance: student.balance,
+    };
+  });
+  return filtered;
+}
+let genderRemoved = removeGenders(data);
+console.log("Gender Removed:", genderRemoved);
