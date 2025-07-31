@@ -272,9 +272,15 @@ console.log("Get Model And Year List:", modelAndYear);
 function tagSuperEfficientCars(cars) {
   cars.map((car) => {
     if (car.fuelEfficiency < 4.0) {
-      car.superEfficient = true;
-    } else {
-      car.superEfficient = false;
+      car.tag = "superEfficient";
+      // return {
+      //     ...car,
+      //     tag: "superEfficient"
+      // }
+
+      //   car.superEfficient = true;
+      // } else {
+      //   car.superEfficient = false;
     }
   });
   return cars;
